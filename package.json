@@ -1,0 +1,11 @@
+{
+  "name": "christmas-guide",
+  "version": "1.0.0",
+  "description": "Lambda for Daily Christmas Guide Flash Briefing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Foster",
+  "license": "MIT"
+}
