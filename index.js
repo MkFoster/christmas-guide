@@ -1,4 +1,5 @@
 'use strict';
+const feed = require('./feed.js');
 
 /**
  * Handle API calls.  The "action" 
