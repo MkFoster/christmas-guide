@@ -1,4 +1,5 @@
 'use strict';
+const feed = require('./feed.js');
 
 /**
  * Handle API calls.  The "action" 
@@ -21,14 +22,27 @@ exports.handler = (event, context, callback) => {
     }
 };
 
+Date.prototype.subtractHours= function(h){
+    this.setHours(this.getHours()-h);
+    return this;
+}
+
 function getFeedItem() {
     const feedText = `There are ${getNumDaysLeftUntilChristmas()} days before Christmas.`;
-    var isoDate = new Date().toISOString();
+    //var isoDate = new Date().toISOString();
+    const d = new Date().subtractHours(4);
+    const monthNumber = d.getMonth() + 1;
+    let dateNumber = d.getDate();
+    if (dateNumber < 10) {dateNumber = '0' + dateNumber};
+    const monthDateKey = `${monthNumber}${dateNumber}`;
+    console.log(monthDateKey);
+    const utc_timestamp = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 1, 0, 0, 0);
+    const utcDate = new Date(utc_timestamp).toISOString();
     const feedObj = {
-        "uid": `urn:uuid:${uuidv4()}`,
-        "updateDate": `${isoDate}`,
-        "titleText": "Daily Christmas Guide Flash Briefing",
-        "mainText": feedText
+        "uid": feed[monthDateKey][`uid`],
+        "updateDate": `${utcDate}`,
+        "titleText": `Daily Christmas Guide Flash Briefing`,
+        "mainText": `${feed[monthDateKey][`mainText`]} This completes your Daily Christmas Guide update.`
     }
     return feedObj;
 }
