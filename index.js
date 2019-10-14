@@ -39,10 +39,12 @@ function getFeedItem() {
     const utc_timestamp = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 1, 0, 0, 0);
     const utcDate = new Date(utc_timestamp).toISOString();
     const feedObj = {
-        "uid": feed[monthDateKey][`uid`],
+        //"uid": feed[monthDateKey][`uid`],
+        "uid": `urn:uuid:815a8ff0-b796-4b35-98c8-c17618ab2773`,
         "updateDate": `${utcDate}`,
         "titleText": `Daily Christmas Guide Flash Briefing`,
-        "mainText": `${feed[monthDateKey][`mainText`]} This completes your Daily Christmas Guide update.`
+        //"mainText": `${feed[monthDateKey][`mainText`]} This completes your Daily Christmas Guide update.`
+        "mainText": `The Daily Christmas Guide will return in October of twenty-nineteen.  Have a happy new year!.`
     }
     return feedObj;
 }
