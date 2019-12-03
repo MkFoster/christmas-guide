@@ -22,8 +22,8 @@ exports.handler = (event, context, callback) => {
     }
 };
 
-Date.prototype.subtractHours= function(h){
-    this.setHours(this.getHours()-h);
+Date.prototype.subtractHours = function(h) {
+    this.setHours(this.getHours() - h);
     return this;
 }
 
@@ -33,18 +33,18 @@ function getFeedItem() {
     const d = new Date().subtractHours(4);
     const monthNumber = d.getMonth() + 1;
     let dateNumber = d.getDate();
-    if (dateNumber < 10) {dateNumber = '0' + dateNumber};
+    if (dateNumber < 10) { dateNumber = '0' + dateNumber };
     const monthDateKey = `${monthNumber}${dateNumber}`;
     console.log(monthDateKey);
     const utc_timestamp = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 1, 0, 0, 0);
     const utcDate = new Date(utc_timestamp).toISOString();
     const feedObj = {
-        //"uid": feed[monthDateKey][`uid`],
-        "uid": `urn:uuid:815a8ff0-b796-4b35-98c8-c17618ab2773`,
-        "updateDate": `${utcDate}`,
-        "titleText": `Daily Christmas Guide Flash Briefing`,
-        //"mainText": `${feed[monthDateKey][`mainText`]} This completes your Daily Christmas Guide update.`
-        "mainText": `The Daily Christmas Guide will return in October of twenty-nineteen.  Have a happy new year!.`
+            "uid": feed[monthDateKey][`uid`],
+            //"uid": `urn:uuid:815a8ff0-b796-4b35-98c8-c17618ab2773`,
+            "updateDate": `${utcDate}`,
+            "titleText": `Daily Christmas Guide Flash Briefing`,
+            "mainText": `${feed[monthDateKey][`mainText`]} This completes your Daily Christmas Guide update.`
+        //"mainText": `The Daily Christmas Guide will return in October of twenty-nineteen.  Have a happy new year!.`
     }
     return feedObj;
 }

@@ -1,6 +1,14 @@
 module.exports = {
+    "1028": {
+        "uid": "urn:uuid:9b8ccd1d-0f56-44b3-8bfc-6d1c1526e722",
+        "mainText": `It's getting close to that time of the year again.  There are now plenty of leaves on the ground here in the Northeast and everyone is getting ready for Halloween.  Halloween items are likely on clearence in most stores by so now is a great time to do a little bargain hunting.`
+    },
+    "1029": {
+        "uid": "urn:uuid:9b8ccd1d-0f56-44b3-8bfc-6d1c15aee722",
+        "mainText": `Get ready for another holiday season!  If you are thinking about hosting for the holidays this year, start cleaning the house now instead of trying to do everything last minute.  Halloween is coming in two days so make sure you are stocked up on candy or maybe some non-candy items like glow sticks for trick-or-treaters.`
+    },
     "1030": {
-        "uid": "urn:uuid:9b8ccd1d-0f56-44b3-8bfc-6d1c15cee722",
+        "uid": "urn:uuid:9b8ccd1d-0f56-44b3-8bfc-6d1c15c99722",
         "mainText": `Many stores start stocking Christmas items by Halloween.  If you are looking for the best selection, now is a good time to start stocking up on items like gift cards, wrapping paper, and decorations.  If you haven't already, make sure your holiday travel plans are in order and you have booked any airline flights you will need.`
     },
     "1031": {
